@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <nav>
-    <Link to="/">
+    <Link to="/rickandmortpage">
       Home
     </Link>
-    <Link to="/Episode">
+    <Link to="/rickandmortpage/episode">
       Episódios
     </Link>
-    <Link to="/About">
+    <Link to="/rickandmortpage/about">
       Sobre
     </Link>
   </nav>
