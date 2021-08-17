@@ -1,0 +1,40 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul li {
+  border-color: greenyellow;
+  border-style: solid;
+  margin: 3%;
+  padding: 1%;
+  list-style-type: none;
+}
+
+h1 {
+  color: greenyellow;
+  display: flex;
+  font-family: fantasy;
+  font-size: 50px;
+  justify-content: center;
+  padding: 2%;
+}
+
+body {
+  background-color: black;
+}
+
+nav {
+  background-color: rgb(27, 24, 24);
+  display: flex;
+  justify-content: space-around;
+  padding: 1%;
+}
+
+a, p {
+  color: greenyellow;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
