@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/rickandmort/static/css/main.a25e4d87.chunk.css",
+    "main.js": "/rickandmort/static/js/main.9e380f73.chunk.js",
+    "main.js.map": "/rickandmort/static/js/main.9e380f73.chunk.js.map",
+    "runtime-main.js": "/rickandmort/static/js/runtime-main.a8b3f7f9.js",
+    "runtime-main.js.map": "/rickandmort/static/js/runtime-main.a8b3f7f9.js.map",
+    "static/js/2.bbac7257.chunk.js": "/rickandmort/static/js/2.bbac7257.chunk.js",
+    "static/js/2.bbac7257.chunk.js.map": "/rickandmort/static/js/2.bbac7257.chunk.js.map",
+    "index.html": "/rickandmort/index.html",
+    "static/css/main.a25e4d87.chunk.css.map": "/rickandmort/static/css/main.a25e4d87.chunk.css.map",
+    "static/js/2.bbac7257.chunk.js.LICENSE.txt": "/rickandmort/static/js/2.bbac7257.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8b3f7f9.js",
+    "static/js/2.bbac7257.chunk.js",
+    "static/css/main.a25e4d87.chunk.css",
+    "static/js/main.9e380f73.chunk.js"
+  ]
+}
