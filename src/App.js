@@ -7,11 +7,11 @@ import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
-    <Provider>
+    <Provider basename="/tarcisio-menezes">
       <Switch>
-        <Route exact path="/rickandmortpage/" component={ Home } />
-        <Route path="/rickandmortpage/episode" component={ Episode } />
-        <Route path="/rickandmortpage/about" component={ About } />
+        <Route exact path="/" component={ Home } />
+        <Route path="/episode" component={ Episode } />
+        <Route path="/about" component={ About } />
         <Route path="*" component={ ErrorPage } />
       </Switch>
     </Provider>
