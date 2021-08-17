@@ -7,7 +7,7 @@ import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
-    <Provider basename="/tarcisio-menezes">
+    <Provider basename="/tarcisio-menezes/rickandmortpage">
       <Switch>
         <Route exact path="/" component={ Home } />
         <Route path="/episode" component={ Episode } />
