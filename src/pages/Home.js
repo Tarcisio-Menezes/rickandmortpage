@@ -67,7 +67,7 @@ function Home() {
   return (
     <div>
      <Nav />
-      <h1>Bem vindo ao Rick and Mort fã page</h1>
+      <h1>Bem vindo ao Rick and Morty fã page</h1>
       <h3> Você pode explorar mais personagens alterando os filtros!</h3>
       <Inputs />
       { listConditinal() }
