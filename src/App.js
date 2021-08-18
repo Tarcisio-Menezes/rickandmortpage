@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/rickandmortpage" component={ Home } />
         <Route path="/rickandmortpage/episode" component={ Episode } />
         <Route path="/rickandmortpage/about" component={ About } />
-        <Route path="*" component={ ErrorPage } />
+        <Route path="/rickandmortpage/*" component={ ErrorPage } />
       </Switch>
     </Provider>
   );
