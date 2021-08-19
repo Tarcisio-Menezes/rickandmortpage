@@ -4,6 +4,8 @@ ul {
 }
 
 ul li {
+  display: grid;
+  place-items: center;
   border-color: greenyellow;
   border-style: solid;
   margin: 3%;
