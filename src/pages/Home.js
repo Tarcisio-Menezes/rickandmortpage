@@ -52,7 +52,6 @@ function Home() {
             <img
               src={item.image}
               alt={item.name}
-              width="300px"
             /> 
             <p>{item.name}</p>
             <p>Espécie: {item.species} </p>

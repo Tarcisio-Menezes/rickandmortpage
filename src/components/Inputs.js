@@ -1,36 +1,39 @@
 import React, { useContext } from 'react';
+import { Form, FloatingLabel } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
 
 function Inputs() {
-  const { setNewPersons, setSearchName, setSearchStatus } = useContext(MainContext);
+  const { setNewPersons, setSearchName, setSearchStatus, searchStatus } = useContext(MainContext);
   return (
     <section>
-        <p> Explorar por página:</p>
-        <input
+        <p> Explorar aleatoriamente por página:</p>
+        <Form.Control
           type="number"
-          placeholder="Número da página"
+          placeholder="Número da página" 
           onChange={ (e) => setNewPersons(e.target.value) }
           min="1"
-        >
-        </input>
-        <div className="combined-search">
-          <h3>Pesquisa combinada</h3>
-          <p> Explorar por nome:</p>
-          <input
-            type="text"
-            placeholder="Nome do personagem"
-            onChange={ (e) => setSearchName((e.target.value).toLowerCase()) }
-          >
-          </input>
-          <p> Explorar por status:</p>
-          <select
-            onChange={ (e) => setSearchStatus(e.target.value) }
-          >
-            <option value="alive"> alive </option>
-            <option value="dead"> dead </option>
-            <option value="unknow"> unknow </option>
-          </select>
-        </div>
+        />
+        <h3>Pesquisa combinada</h3>
+        <section className="inputs">
+             <p> Pesquise por nome e diga se o personagem está vivo ou morto</p>
+             <Form.Control
+              type="text"
+              placeholder="Nome do personagem"
+              onChange={ (e) => setSearchName((e.target.value).toLowerCase()) }
+             />
+            <FloatingLabel controlId="floatingSelect">
+              <Form.Select
+                aria-label="alive, dead or unknow"
+                onChange={ (e) => setSearchStatus(e.target.value) }
+              >
+              <option>Status</option>
+              <option value="alive"> Alive </option>
+              <option value="dead"> Dead </option>
+              <option value="unknow"> Unknow </option>
+            </Form.Select>
+            <p>{ searchStatus }</p>
+          </FloatingLabel>
+        </section>
     </section>
   );
 }

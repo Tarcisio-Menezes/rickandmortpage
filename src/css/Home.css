@@ -55,15 +55,21 @@ input, select {
   margin-bottom: 2%;
 }
 
-.combined-search {
+.inputs {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-style: solid;
   border-color: greenyellow;
   margin: auto;
   width: fit-content;
-  padding: 2%;
+  padding: 1%;
+}
+
+.inputs input {
+  margin-right: 2%;
+}
+
+.inputs select {
+  margin-left: 2%;
 }
 
 li img:hover {
