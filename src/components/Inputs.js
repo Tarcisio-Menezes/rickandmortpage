@@ -3,7 +3,8 @@ import { Form, FloatingLabel } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
 
 function Inputs() {
-  const { setNewPersons, setSearchName, setSearchStatus, searchStatus } = useContext(MainContext);
+  const { setNewPersons, setSearchName, 
+    searchName, setSearchStatus, searchStatus } = useContext(MainContext);
   return (
     <section>
         <p> Explorar aleatoriamente por página:</p>
@@ -31,7 +32,7 @@ function Inputs() {
               <option value="dead"> Dead </option>
               <option value="unknow"> Unknow </option>
             </Form.Select>
-            <p>{ searchStatus }</p>
+            <p>{ searchName.toUpperCase() } { searchStatus.toUpperCase() }</p>
           </FloatingLabel>
         </section>
     </section>

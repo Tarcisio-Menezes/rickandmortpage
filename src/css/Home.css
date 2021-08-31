@@ -4,6 +4,8 @@ ul {
 }
 
 ul li {
+  align-content: center;
+  text-align: center;
   display: grid;
   place-items: center;
   border-color: greenyellow;
@@ -40,6 +42,7 @@ nav:hover{
 }
 
 a, p, h3, input {
+  text-align: center;
   color: greenyellow;
   display: flex;
   justify-content: center;
@@ -83,11 +86,26 @@ h1:hover {
 }
 
 @media screen and (max-width: 680px) {
-  ul, p, h3, h1, li {
+  ul, h3, h1 {
     align-content: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .inputs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    border-color: greenyellow;
+    width: fit-content;
+    padding: 1%;
+  }
+
+  .inputs p {
+    text-align: center;
   }
 
   li img {
@@ -95,14 +113,29 @@ h1:hover {
     width: 250px;
   }
 
+  .inputs input {
+    margin-right: auto;
+  }
+  
+  .inputs select {
+    margin-left: auto;
+  }
+
   li {
-    width: fit-content;
+    width: min-content;
   }
 
   li img:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+  }
+
+  ul li p {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 2%;
   }
 
 }
