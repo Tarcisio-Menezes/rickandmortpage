@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/rickandmortpage/static/css/main.39559a2c.chunk.css",
-    "main.js": "/rickandmortpage/static/js/main.01887cb1.chunk.js",
-    "main.js.map": "/rickandmortpage/static/js/main.01887cb1.chunk.js.map",
+    "main.css": "/rickandmortpage/static/css/main.7653c431.chunk.css",
+    "main.js": "/rickandmortpage/static/js/main.8347bead.chunk.js",
+    "main.js.map": "/rickandmortpage/static/js/main.8347bead.chunk.js.map",
     "runtime-main.js": "/rickandmortpage/static/js/runtime-main.40c3e82f.js",
     "runtime-main.js.map": "/rickandmortpage/static/js/runtime-main.40c3e82f.js.map",
-    "static/js/2.bbac7257.chunk.js": "/rickandmortpage/static/js/2.bbac7257.chunk.js",
-    "static/js/2.bbac7257.chunk.js.map": "/rickandmortpage/static/js/2.bbac7257.chunk.js.map",
+    "static/js/2.282a94a0.chunk.js": "/rickandmortpage/static/js/2.282a94a0.chunk.js",
+    "static/js/2.282a94a0.chunk.js.map": "/rickandmortpage/static/js/2.282a94a0.chunk.js.map",
     "index.html": "/rickandmortpage/index.html",
-    "static/css/main.39559a2c.chunk.css.map": "/rickandmortpage/static/css/main.39559a2c.chunk.css.map",
-    "static/js/2.bbac7257.chunk.js.LICENSE.txt": "/rickandmortpage/static/js/2.bbac7257.chunk.js.LICENSE.txt"
+    "static/css/main.7653c431.chunk.css.map": "/rickandmortpage/static/css/main.7653c431.chunk.css.map",
+    "static/js/2.282a94a0.chunk.js.LICENSE.txt": "/rickandmortpage/static/js/2.282a94a0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.40c3e82f.js",
-    "static/js/2.bbac7257.chunk.js",
-    "static/css/main.39559a2c.chunk.css",
-    "static/js/main.01887cb1.chunk.js"
+    "static/js/2.282a94a0.chunk.js",
+    "static/css/main.7653c431.chunk.css",
+    "static/js/main.8347bead.chunk.js"
   ]
 }
