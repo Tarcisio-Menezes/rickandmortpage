@@ -36,7 +36,7 @@ function Episode() {
   }
 
   return (
-    <div>
+    <div className="episodes">
       <Nav />
       <h1>Episódios</h1>
       <p>Em construção...</p>
