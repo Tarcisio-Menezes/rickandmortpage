@@ -1,33 +1,25 @@
-export const getPersons = () => fetch('https://rickandmortyapi.com/api/character')
+export const getPersons = () => fetch('http://www.irmaodojorel.com/api/Personagem')
   .then((initial) => (
     initial
       .json()
       .then((json) => (initial.ok ? Promise.resolve(json) : Promise.reject(json)))
   ));
 
-export const getNewPersons = (newPersons) => fetch(`https://rickandmortyapi.com/api/character/?page=${newPersons}`)
+export const getNamePersons = (namePersons) => fetch(`http://www.irmaodojorel.com/api/Personagem/busca/${namePersons}`)
   .then((initial) => (
     initial
       .json()
       .then((json) => (initial.ok ? Promise.resolve(json) : Promise.reject(json)))
   ));
 
-export const getNamePersons = (namePersons, status) => fetch(`https://rickandmortyapi.com/api/character/?name=${namePersons}&status=${status}`)
+  export const getEpisodes = () => fetch(`http://www.irmaodojorel.com/api/Episodio`)
   .then((initial) => (
     initial
       .json()
       .then((json) => (initial.ok ? Promise.resolve(json) : Promise.reject(json)))
   ));
 
-  export const getEpisodes = (number) => fetch(`https://rickandmortyapi.com/api/episode`)
-  .then((initial) => (
-    initial
-      .json()
-      .then((json) => (initial.ok ? Promise.resolve(json) : Promise.reject(json)))
-  ));
-
-
-  export const getRamdonPersons = (number) => fetch(`https://rickandmortyapi.com/api/character/${number}`)
+  export const getSearchEpisodes = (episodeName) => fetch(`http://www.irmaodojorel.com/api/Episodio/busca/${episodeName}`)
   .then((initial) => (
     initial
       .json()

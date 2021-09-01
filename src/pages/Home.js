@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Nav from '../components/Nav';
 import MainContext from '../context/MainContext';
-import { getNamePersons, getNewPersons, getPersons } from '../services/SearchAPI';
+import { getPersons, getNamePersons } from '../services/SearchAPI';
 import '../css/Home.css';
 import Inputs from '../components/Inputs';
 
@@ -10,14 +10,12 @@ function Home() {
   const { 
     persons,
     setPersons,
-    newPersons,
     searchName,
-    searchStatus,
     } = useContext(MainContext);
 
   useEffect(() => {
     async function getCharacter() {
-      const { results } = await getPersons();
+      const results = await getPersons();
       setPersons(results);
     }
   
@@ -27,20 +25,12 @@ function Home() {
   // console.log(persons);
 
   useEffect(() => {
-    async function getNewCharacter() {
-      const { results } = await getNewPersons(newPersons);
-      setPersons(results);
-    }
-    getNewCharacter() && setLoading(false);
-  }, [newPersons]);
-
-  useEffect(() => {
     async function getNameCharacter() {
-      const { results } = await getNamePersons(searchName, searchStatus);
+      const results = await getNamePersons(searchName);
       setPersons(results);
     }
     getNameCharacter() && setLoading(false);
-  }, [searchName, searchStatus]);
+  }, [searchName]);
 
   function listConditinal() {
     if(loading || !persons) {
@@ -50,13 +40,16 @@ function Home() {
       {
           persons.map((item, index) => <li key={index}> 
             <img
-              src={item.image}
-              alt={item.name}
+              src={item.imagemUrl}
+              alt={item.descricao}
             /> 
-            <p>{item.name}</p>
-            <p>Espécie: {item.species} </p>
-            <p>Status: {item.status}</p>
-            <p>Localização: {item.location.name}</p> 
+            <p>{item.nome}</p>
+            <p>{item.descricao}</p>
+            { item.personalidade && <p> Personalidade: {item.personalidade} </p> }
+            { item.categoria && <p> Categoria: {item.categoria} </p> }
+            { item.idade && <p> Idade: {item.idade} </p> }
+            { item.descricao && <p>Descricao: {item.descricao }</p>}
+            { item.frase && <p>Frase mais conhecida: {item.frase}</p> } 
             </li>)
       }
     </ul>
@@ -66,8 +59,7 @@ function Home() {
   return (
     <div>
      <Nav />
-      <h1>Bem vindo ao Rick and Morty fã page</h1>
-      <h3> Você pode explorar mais personagens alterando os filtros!</h3>
+      <h1>Encontre os personagens de Irmão do Jorel</h1>
       <Inputs />
       { listConditinal() }
     </div>

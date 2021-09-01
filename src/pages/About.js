@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Nav from '../components/Nav';
-import { getRamdonPersons } from '../services/SearchAPI';
 import '../css/About.css'
 
 function About() {
 
-  const [randomPersons, setRandomPersons] = useState("");
-
   // Retirado de https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
+  // function getRandomInt(min, max) {
+  //   min = Math.ceil(min);
+  //   max = Math.floor(max);
+  //   return Math.floor(Math.random() * (max - min)) + min;
+  // }
 
-  useEffect(() => {
-    async function RandomPerson() {
-      const { image } = await getRamdonPersons(getRandomInt(1,184));
-      setRandomPersons(image);
-    }
-    RandomPerson();
-  }, []);
+  // useEffect(() => {
+  //   async function RandomPerson() {
+  //     const { image } = await getRamdonPersons(getRandomInt(1,184));
+  //     setRandomPersons(image);
+  //   }
+  //   RandomPerson();
+  // }, []);
 
   return (
     <div>
@@ -51,9 +48,7 @@ function About() {
         rickandmortyapi
       </a>
       <div className="about-image">
-        { randomPersons ?  
-          <img src={ randomPersons } alt="random avatar" width="300px"/> :
-         <h2>Carregando...</h2> }
+         <h2>Carregando...</h2>
       </div>
     </div>
   );

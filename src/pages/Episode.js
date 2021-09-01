@@ -1,23 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
 import Nav from '../components/Nav';
 import '../css/Episode.css';
-import { getEpisodes } from '../services/SearchAPI';
+import { getEpisodes, getSearchEpisodes } from '../services/SearchAPI';
 
 function Episode() {
 
   const [episodes, setEpisodes] = useState([]);
+  const [newEpisodes, setNewEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getPersons = async () => {
-     const { results } = await getEpisodes();
+    const getEpisode = async () => {
+     const results = await getEpisodes();
      setEpisodes(results)
     }
 
-    getPersons() && setLoading(false);
+
+    getEpisode() && setLoading(false);
   }, []);
 
-  // console.log(episodes)
+  useEffect(() => {
+    const getSearchPerson = async (searchName) => {
+     const results = await getSearchEpisodes(newEpisodes);
+     setEpisodes(results)
+    }
+
+
+    getSearchPerson() && setLoading(false);
+  }, [newEpisodes, setNewEpisodes]);
+
+  console.log(episodes)
 
   function listConditinal() {
     if(loading || !episodes) {
@@ -26,9 +39,10 @@ function Episode() {
       <ul>
       {
         episodes.map((item, index) => <li key={index}> 
-          <p>{item.name}</p> 
-          <p>Date: {item.air_date} </p>
-          <p>Episódio: {item.episode}</p>
+          <p>{item.nome}</p> 
+          <p>Data de estreia: {item.dataEstreia.substring(10, 0)} - temporada {item.temporadaId} </p>
+          <p>Descrição: {item.descricao}</p>
+          <p>Sinopse: {item.sinopse}</p>
           </li>)
       }
     </ul>
@@ -39,7 +53,14 @@ function Episode() {
     <div className="episodes">
       <Nav />
       <h1>Episódios</h1>
-      <p>Em construção...</p>
+      <section className="inputs">
+             <h3> Pesquise pelo nome do episódio:</h3>
+             <Form.Control
+              type="text"
+              placeholder="Nome do episódio"
+              onChange={ (e) => setNewEpisodes((e.target.value).toLowerCase()) }
+             />
+        </section>
       { listConditinal() }
     </div>
   );
