@@ -25,3 +25,11 @@ export const getNamePersons = (namePersons) => fetch(`http://www.irmaodojorel.co
       .json()
       .then((json) => (initial.ok ? Promise.resolve(json) : Promise.reject(json)))
   ));
+
+  export const getRandomPerson = (id) => fetch(`http://www.irmaodojorel.com/api/Personagem/${id}`)
+  .then((initial) => (
+    initial
+      .json()
+      .then((json) => (initial.ok ? Promise.resolve(json) : Promise.reject(json)))
+  ));
+  

@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
-import Nav from '../components/Nav';
+import { Card, Container, Row, Col } from 'react-bootstrap';
+import Nave from '../components/Nave';
 import MainContext from '../context/MainContext';
 import { getPersons, getNamePersons } from '../services/SearchAPI';
 import '../css/Home.css';
 import Inputs from '../components/Inputs';
+import logo from '../images/logo';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -36,32 +38,49 @@ function Home() {
     if(loading || !persons) {
       return <p>Carregando...</p>
     } return (
-      <ul>
+      <ul className="home-persons">
       {
-          persons.map((item, index) => <li key={index}> 
-            <img
+        persons.map((item, index) => <li key={index}>
+          <Card 
+            style={{ width: '15rem' }}
+          >
+            <Card.Img 
+              variant="top"
               src={item.imagemUrl}
               alt={item.descricao}
-            /> 
-            <p>{item.nome}</p>
-            <p>{item.descricao}</p>
-            { item.personalidade && <p> Personalidade: {item.personalidade} </p> }
-            { item.categoria && <p> Categoria: {item.categoria} </p> }
-            { item.idade && <p> Idade: {item.idade} </p> }
-            { item.descricao && <p>Descricao: {item.descricao }</p>}
+            />
+          <Card.Body>
+            <Card.Title>{item.nome}</Card.Title>
+            <Card.Text>
+              <p>{ item.descricao }</p>
+              { item.idade && <p> Idade: {item.idade} </p> }
+              { item.categoria && <p> Categoria: {item.categoria} </p> }
+              { item.personalidade && <p> Personalidade: {item.personalidade} </p> }
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
             { item.frase && <p>Frase mais conhecida: {item.frase}</p> } 
-            </li>)
+          </Card.Footer>
+          </Card>
+       </li>)
       }
     </ul>
     );
   }
 
   return (
-    <div>
-     <Nav />
-      <h1>Encontre os personagens de Irmão do Jorel</h1>
-      <Inputs />
-      { listConditinal() }
+    <div className="home-page">
+      <Container fluid="md">
+        <Row>
+          <Col> <Nave /> </Col>
+        </Row>
+        <section>
+            <img src={ logo } alt="logo" width="30%" />
+            <h1>Encontre os personagens!</h1>
+          </section>
+          <Inputs />
+          { listConditinal() }
+      </Container>
     </div>
   );
 }

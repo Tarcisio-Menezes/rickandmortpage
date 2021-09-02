@@ -1,9 +1,16 @@
-ul {
+.home-page {
+  height: 80%;
+  overflow: auto;
+}
+
+.home-persons {
   display: flex;
+  justify-content: space-around;
+  margin: auto;
   flex-wrap: wrap;
 }
 
-ul li {
+.home-persons li {
   align-content: center;
   text-align: center;
   display: grid;
@@ -15,127 +22,9 @@ ul li {
   list-style-type: none;
 }
 
-h1 {
-  color: greenyellow;
-  display: flex;
-  font-family: fantasy;
-  font-size: 50px;
-  justify-content: center;
-  padding: 2%;
-  opacity: 1;
+.home-persons li img {
+  align-self: center;
+  margin: 5%;
+  width: 200px;
 }
 
-body {
-  background-color: black;
-}
-
-nav {
-  background-color: rgb(27, 24, 24);
-  display: flex;
-  justify-content: space-around;
-  padding: 1%;
-  opacity: 0.75;
-}
-
-nav:hover{
-  opacity:1;
-}
-
-a, p, h3, input {
-  text-align: center;
-  color: greenyellow;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-
-input, select {
-  color: black;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  margin-bottom: 2%;
-}
-
-.inputs {
-  display: flex;
-  border-style: solid;
-  border-color: greenyellow;
-  margin: auto;
-  width: fit-content;
-  padding: 1%;
-}
-
-.inputs input {
-  margin-right: 2%;
-}
-
-.inputs select {
-  margin-left: 2%;
-}
-
-li img:hover {
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
-}
-
-h1:hover {
-  opacity: 0.80;
-}
-
-@media screen and (max-width: 680px) {
-  ul, h3, h1 {
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .inputs {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-style: solid;
-    border-color: greenyellow;
-    width: fit-content;
-    padding: 1%;
-  }
-
-  .inputs p {
-    text-align: center;
-  }
-
-  li img {
-    align-self: center;
-    width: 250px;
-  }
-
-  .inputs input {
-    margin-right: auto;
-  }
-  
-  .inputs select {
-    margin-left: auto;
-  }
-
-  li {
-    width: min-content;
-  }
-
-  li img:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-
-  ul li p {
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 2%;
-  }
-
-}

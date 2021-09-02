@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import Nav from '../components/Nav';
+import Nave from '../components/Nave';
 import '../css/Episode.css';
 import { getEpisodes, getSearchEpisodes } from '../services/SearchAPI';
 
@@ -16,7 +16,6 @@ function Episode() {
      setEpisodes(results)
     }
 
-
     getEpisode() && setLoading(false);
   }, []);
 
@@ -26,11 +25,10 @@ function Episode() {
      setEpisodes(results)
     }
 
-
     getSearchPerson() && setLoading(false);
-  }, [newEpisodes, setNewEpisodes]);
+  }, [newEpisodes]);
 
-  console.log(episodes)
+  // console.log(episodes)
 
   function listConditinal() {
     if(loading || !episodes) {
@@ -51,16 +49,16 @@ function Episode() {
 
   return (
     <div className="episodes">
-      <Nav />
+      <Nave />
       <h1>Episódios</h1>
       <section className="inputs">
-             <h3> Pesquise pelo nome do episódio:</h3>
-             <Form.Control
-              type="text"
-              placeholder="Nome do episódio"
-              onChange={ (e) => setNewEpisodes((e.target.value).toLowerCase()) }
-             />
-        </section>
+        <h3> Pesquise pelo nome do episódio:</h3>
+        <Form.Control
+        type="text"
+        placeholder="Nome do episódio"
+        onChange={ (e) => setNewEpisodes((e.target.value).toLowerCase()) }
+        />
+      </section>
       { listConditinal() }
     </div>
   );
