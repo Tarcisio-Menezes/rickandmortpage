@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import Nave from '../components/Nave';
 import { getRandomInt } from '../services/RandomNumber';
 import { getRandomPerson } from '../services/SearchAPI';
@@ -18,40 +19,44 @@ function About() {
   }, []);
 
   return (
-    <div>
-      <Nave />
-      <h2>
-        Se você gostou do projeto, me ajude a mantê-lo!
-        Entre em contato por:
-      </h2>
-      <br />
-        <a 
-          href="https://github.com/Tarcisio-Menezes"
-          target="_blank" rel="noreferrer"
-        >
-          GitHub
-        </a>
-        <a 
-          href="https://www.linkedin.com/in/tarc%C3%ADsio-menezes/"
-          target="_blank" rel="noreferrer"
-        > 
-          Linkedin 
-        </a>
-      <br />
-      <h2> Agradecimento ao site: </h2> 
-      <a 
-        href="http://www.irmaodojorel.com/"
-        target="_blank" rel="noreferrer"
-      > 
-        irmaodojorel.com/
-      </a>
-      <div className="about-image">
-        { randomPerson ?
-        <img src={ randomPerson.imagemUrl }
-        alt={ `Imagem de um personagem gerado aleatóriamente: ${ randomPerson.nome }` }
-        /> : 
-        <h2>Carregando...</h2> }
-      </div>
+    <div className="about">
+      <Container>
+        <Row>
+          <Col><Nave /></Col>
+          <h2>
+            Obrigado por visitar meu projeto!
+            Entre em contato por:
+          </h2>
+          <br />
+            <a 
+              href="https://github.com/Tarcisio-Menezes"
+              target="_blank" rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/tarc%C3%ADsio-menezes/"
+              target="_blank" rel="noreferrer"
+            > 
+              Linkedin 
+            </a>
+          <br />
+          <h2> Agradecimento ao site: </h2> 
+          <a 
+            href="http://www.irmaodojorel.com/"
+            target="_blank" rel="noreferrer"
+          > 
+            irmaodojorel.com/
+          </a>
+          <div className="about-image">
+            { randomPerson ?
+            <img src={ randomPerson.imagemUrl }
+            alt={ `Imagem de um personagem gerado aleatóriamente: ${ randomPerson.nome }` }
+            /> : 
+            <h2>Carregando...</h2> }
+          </div>
+        </Row>
+      </Container>
     </div>
   );
 }

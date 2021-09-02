@@ -12,14 +12,13 @@
 
 .home-persons li {
   align-content: center;
-  text-align: center;
+  box-shadow: 3px 3px grey, -1em 0 0.4em grey;
   display: grid;
   place-items: center;
-  border-color: greenyellow;
-  border-style: solid;
   margin: 3%;
   padding: 1%;
   list-style-type: none;
+  text-align: center;
 }
 
 .home-persons li img {
@@ -28,3 +27,56 @@
   width: 200px;
 }
 
+.home-persons li:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.home-page section {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+}
+
+.home-page section img {
+  align-self: center;
+  border-radius: 50%;
+  margin: 2%;
+  width: 30%;
+}
+
+.home-page section img:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.home-page h1 {
+  align-self: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 680px) {
+
+  .home-persons li img {
+    width: 100px;
+  }
+
+  .home-persons li {
+    margin: 3%;
+  }
+
+  .home-page h1 {
+    margin: 10%;
+  }
+
+  .home-page section img {
+    width: fit-content;
+  }
+
+  .home-page input {
+    margin-bottom: 5%;
+  }
+}

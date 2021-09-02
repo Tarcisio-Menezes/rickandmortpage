@@ -1,0 +1,52 @@
+.episode-page {
+  height: 80%;
+  overflow: auto;
+}
+
+.episode-page h1 {
+  margin: 3%;
+  text-align: center;
+}
+
+.episodes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+}
+
+.inputs h3 {
+  text-align: center;
+}
+
+.inputs input {
+  margin-left: 1%;
+  width: min-content;
+}
+
+.episodes li {
+  box-shadow: 3px 3px grey, -1em 0 0.4em grey;
+  list-style: none;
+  margin: 3%;
+}
+
+.episodes li:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+@media screen and (max-width: 680px) {
+  .inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputs input {
+    align-self: center;
+    margin: 3%;
+  }
+}

@@ -5,7 +5,7 @@ import MainContext from '../context/MainContext';
 import { getPersons, getNamePersons } from '../services/SearchAPI';
 import '../css/Home.css';
 import Inputs from '../components/Inputs';
-import logo from '../images/logo';
+import logo from '../images/irmao-do-jorel.jpeg';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -42,25 +42,25 @@ function Home() {
       {
         persons.map((item, index) => <li key={index}>
           <Card 
-            style={{ width: '15rem' }}
+            style={{ width: '18rem' }}
           >
             <Card.Img 
               variant="top"
               src={item.imagemUrl}
               alt={item.descricao}
             />
-          <Card.Body>
-            <Card.Title>{item.nome}</Card.Title>
-            <Card.Text>
-              <p>{ item.descricao }</p>
-              { item.idade && <p> Idade: {item.idade} </p> }
-              { item.categoria && <p> Categoria: {item.categoria} </p> }
-              { item.personalidade && <p> Personalidade: {item.personalidade} </p> }
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            { item.frase && <p>Frase mais conhecida: {item.frase}</p> } 
-          </Card.Footer>
+            <Card.Body>
+              <Card.Title>{item.nome}</Card.Title>
+              <Card.Text>
+                <p>{ item.descricao }</p>
+                { item.idade && <p> Idade: {item.idade} </p> }
+                { item.categoria && <p> Categoria: {item.categoria} </p> }
+                { item.personalidade && <p> Personalidade: {item.personalidade} </p> }
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              { item.frase && <p>Frase mais conhecida: {item.frase}</p> } 
+            </Card.Footer>
           </Card>
        </li>)
       }
@@ -75,9 +75,9 @@ function Home() {
           <Col> <Nave /> </Col>
         </Row>
         <section>
-            <img src={ logo } alt="logo" width="30%" />
-            <h1>Encontre os personagens!</h1>
-          </section>
+            <img src={ logo } alt="logo" />
+            <h1>Encontre seus personagens favoritos!</h1>
+        </section>
           <Inputs />
           { listConditinal() }
       </Container>

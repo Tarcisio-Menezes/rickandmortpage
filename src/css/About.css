@@ -1,0 +1,21 @@
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.about h2, a {
+  text-align: center;
+}
+
+.about h2 {
+  margin-top: 3%;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  margin-top: 2%;
+}
