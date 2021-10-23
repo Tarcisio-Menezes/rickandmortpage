@@ -42,7 +42,7 @@ Nesta aplicação é possível procurar pelos seus personagens favoritos e algun
 
 ## Documentação da API de Rick and Morty
 
-A aplicação consome os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas.
+A aplicação consome os dados da API _rickandmortyapi_ para realizar a busca de personagens e episódios.
 
 - https://rickandmortyapi.com/
 
