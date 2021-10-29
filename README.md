@@ -4,7 +4,7 @@ Nesta aplicação é possível procurar pelos seus personagens favoritos e algun
 
 # Tecnologias
 
-  * ReactJS
+  * React.js
 
   * Componentes funcionais
 
