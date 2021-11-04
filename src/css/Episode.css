@@ -1,39 +1,52 @@
-.episodes ul {
+.episode-page {
+  height: 80%;
+  overflow: auto;
+}
+
+.episode-page h1 {
+  margin: 3%;
+  text-align: center;
+}
+
+.episodes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
-.episodes h1 {
-  color: greenyellow;
+.inputs {
   display: flex;
-  font-family: fantasy;
-  font-size: 50px;
   justify-content: center;
-  padding: 2%;
 }
 
-.episodes a, p {
+.inputs h3 {
   text-align: center;
-  color: greenyellow;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  flex-wrap: nowrap;
 }
 
+.inputs input {
+  margin-left: 1%;
+  width: min-content;
+}
+
+.episodes li {
+  box-shadow: 3px 3px grey, -1em 0 0.4em grey;
+  list-style: none;
+  margin: 3%;
+}
+
+.episodes li:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
 
 @media screen and (max-width: 680px) {
-
-  .episodes li {
-    list-style-type: none;
-    width: max-content;
-    padding: 1%;
+  .inputs {
+    display: flex;
+    flex-direction: column;
   }
 
-  .episodes li p {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+  .inputs input {
+    align-self: center;
+    margin: 3%;
   }
 }

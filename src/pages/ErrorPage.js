@@ -1,38 +1,39 @@
 import React, { useState, useEffect } from 'react'
-import Nav from '../components/Nav';
-import { getRamdonPersons } from '../services/SearchAPI';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { getRandomInt } from '../services/RandomNumber';
+import { getRandomPerson } from '../services/SearchAPI';
+import Nave from '../components/Nave';
 import '../css/ErrorPage.css';
 
 function ErrorPage() {
 
-  const [randomPersons, setRandomPersons] = useState("");
-
-  // Retirado de https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
+  const [randomPerson, setRandomPerson] = useState([]);
 
   useEffect(() => {
     async function RandomPerson() {
-      const { image } = await getRamdonPersons(getRandomInt(1,184));
-      setRandomPersons(image);
+      const result = await getRandomPerson(getRandomInt(1, 109));
+      console.log(result)
+      setRandomPerson(result);
     }
     RandomPerson();
   }, []);
 
-  // console.log(getRandomInt(1,9));
-
   return (
-    <div>
-      <Nav />
-      <h2>Ooooops, página não encontrada!!</h2>
-      <div className="error">
-      { randomPersons ?  
-          <img src={ randomPersons } alt="random avatar from page not found" width="300px"/> :
-         <h2>Carregando...</h2> }
-      </div>
+    <div className="error-page">
+      <Container>
+        <Row>
+          <Col><Nave /></Col>
+        </Row>
+        <h2>Ooooops, página não encontrada!!</h2>
+        { randomPerson ? 
+        <Card style={{ width: '15rem' }}>
+          <Card.Img variant="top" src={ randomPerson.imagemUrl } />
+          <Card.Body>
+          <Card.Text> { randomPerson.nome } não encontrou a página!</Card.Text>
+          </Card.Body>
+        </Card> : 
+        <h2>Carregando...</h2> }
+      </Container>
     </div>
   );
 }

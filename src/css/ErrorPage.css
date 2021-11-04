@@ -1,12 +1,21 @@
-.error {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  padding: 3%;
+body {
+  background-color: whitesmoke;
 }
 
-img:hover {
-  -webkit-transform: rotateZ(-30deg);
-  -ms-transform: rotateZ(-30deg);
-  transform: rotateZ(-30deg);
+.error-page {
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  overflow: auto;
+}
+
+.error-page h2 {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.error-page img {
+  align-self: center;
+  margin: 5%;
+  width: 200px;
 }
